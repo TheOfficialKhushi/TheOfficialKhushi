@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>जन्मदिन की शुभकामनाएँ!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url(a.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            animation: bounce 2s infinite;
+            color: deeppink;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            background: hotpink;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        /* Click for Surprise बटन का स्टाइल */
+        .surprise-btn {
+            background: #fff;
+            color: #ff7eb3;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .surprise-btn:hover {
+            transform: scale(1.1);
+            background: lightpink;
+            color: #fff;
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* उड़ते हुए गुब्बारों का एनिमेशन */
+        .balloon {
+            width: 50px;
+            height: 65px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            position: absolute;
+            bottom: -100px;
+            animation: flyUp 6s infinite linear;
+        }
+
+        .balloon:before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.7);
+            bottom: -28px;
+            left: 24px;
+        }
+
+        .balloon:after {
+            content: "▲";
+            position: absolute;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 10px;
+            bottom: -6px;
+            left: 20px;
+        }
+
+        @keyframes flyUp {
+            0% {
+                bottom: -100px;
+                opacity: 1;
+            }
+            100% {
+                bottom: 105vh;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎉 जन्मदिन की बहुत-बहुत शुभकामनाएँ! 🎂</h1>
+    <p>क्या आप अपने लिए एक प्यारा सा सरप्राइज देखना चाहते हैं?</p>
+
+    <!-- यहाँ अपना लिंक डालें -->
+    <button class="surprise-btn" onclick="openSurprise()">Click for Surprise ✨</button>
+
+    <!-- उड़ते हुए गुब्बारे (जावास्क्रिप्ट से जनरेट होंगे) -->
+    <div id="balloon-container"></div>
+
+    <script>
+        function openSurprise() {
+            // यहाँ अपनी दूसरी वेबसाइट या क्विज़ का लिंक (URL) डालें
+            window.location.href = "cake.html";
+        }
+
+        // गुब्बारे बनाने का फंक्शन
+        const balloonContainer = document.getElementById("balloon-container");
+        const colors = ['#ffebee', '#e1bee7', '#bbdefb', '#c8e6c9', '#fff9c4', '#ffe0b2'];
+
+        function createBalloon() {
+            const balloon = document.createElement("div");
+            balloon.classList.add("balloon");
+           
+            // रैंडम रंग और पोजीशन
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            const randomX = Math.random() * 100;
+            const randomDelay = Math.random() * 5;
+            const randomDuration = Math.random() * 5 + 4;
+
+            balloon.style.left = `${randomX}%`;
+            balloon.style.background = randomColor;
+            balloon.style.animationDelay = `${randomDelay}s`;
+            balloon.style.animationDuration = `${randomDuration}s`;
+
+            balloonContainer.appendChild(balloon);
+
+            // गुब्बारा स्क्रीन से बाहर जाने के बाद डिलीट हो जाए
+            setTimeout(() => {
+                balloon.remove();
+            }, randomDuration * 1000);
+        }
+
+        // हर सेकंड एक नया गुब्बारा बनाएँ
+        setInterval(createBalloon, 1000);
+    </script>
+</body>
+</html>
