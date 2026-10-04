@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,9 +173,6 @@ footer{position:relative;z-index:1;text-align:center;padding:20px;color:#bcaad8;
 <body>
 <div id="sky"></div>
 
-<!-- बैकग्राउंड म्यूजिक एलिमेंट (लूप पर चलने के लिए) -->
-<audio id="bgMusic" src="bg-music.mp3" loop prefetch></audio>
-
 <header>
   <span>♡ For Khushboo</span>
   <span>Made with love 💗</span>
@@ -191,8 +189,7 @@ footer{position:relative;z-index:1;text-align:center;padding:20px;color:#bcaad8;
       just for you.
     </p>
     <div class="big-emoji" style="font-size:95px;animation:bob 2s infinite">🎁</div>
-    <!-- बटन पर क्लिक करते ही म्यूजिक शुरू हो जाएगा -->
-    <button class="btn" onclick="startSurprise()">Start Your Surprise ✨</button>
+    <button class="btn" onclick="show('birthday')">Start Your Surprise ✨</button>
   </div>
 </section>
 
@@ -281,3 +278,145 @@ happy surprises, peaceful nights and unforgettable memories.
 May every little wish find its way to you.
 
 And whenever life feels difficult,
+remember that brighter days can come.
+      </p>
+      <p class="love">Happy Birthday, Khushboo! ♡</p>
+    </div>
+    <br>
+    <button class="btn" onclick="show('videoScreen')">Watch Our Memories 🎬💗</button>
+  </div>
+</section>
+
+<!-- 6. LAST SECTION: YOUR VIDEO -->
+<section class="screen" id="videoScreen">
+  <div class="content">
+    <div class="tag">✧ OUR LITTLE WORLD ✧</div>
+    <h1>Our Memories,<br>Khushboo 💞</h1>
+    <p>Every little moment with you is a memory<br>I wish I could keep forever.</p>
+
+    <div class="memory-frame">
+      <video id="sisterVideo" controls playsinline preload="metadata">
+        <source src="memories.mp4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+    </div>
+
+    <p class="video-caption">Different moments, one forever bond. 👭</p>
+
+    <div class="letter" style="margin-top:22px">
+      <div class="big-emoji">💗</div>
+      <h2>My Forever Person</h2>
+      <p>
+Khushboo, thank you for being YOU.
+
+I hope we keep making memories,
+laughing over silly things,
+and standing beside each other
+through every chapter of life.
+      </p>
+      <p class="love">
+No matter how old we get,
+you'll always be my little piece of home. ♡
+      </p>
+    </div>
+
+    <br>
+    <button class="btn" onclick="restart()">Relive the Surprise ↻</button>
+  </div>
+</section>
+
+<footer>made with a little love, just for Khushboo ♡</footer>
+
+<script>
+// Stars
+const sky=document.getElementById("sky");
+for(let i=0;i<75;i++){
+  const s=document.createElement("span");
+  s.className="star";
+  s.textContent=Math.random()>.5?"✦":"·";
+  s.style.left=Math.random()*100+"%";
+  s.style.top=Math.random()*100+"%";
+  s.style.fontSize=(8+Math.random()*12)+"px";
+  s.style.animationDelay=Math.random()*3+"s";
+  sky.appendChild(s);
+}
+
+// Screen navigation
+function show(id){
+  const video=document.getElementById("sisterVideo");
+  if(id!=="videoScreen") video.pause();
+
+  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+  celebrate();
+}
+
+// Candles
+let candlesBlown=false;
+function blowCandles(){
+  if(candlesBlown)return;
+  candlesBlown=true;
+  document.getElementById("cake").classList.add("candles-out");
+  document.getElementById("wishText").textContent=
+    "Your wish is on its way to the stars! ✨";
+  document.getElementById("blowBtn").textContent="Wish Made! 💖";
+
+  document.querySelectorAll(".candle").forEach(c=>{
+    const smoke=document.createElement("span");
+    smoke.className="smoke";
+    smoke.textContent="〰";
+    c.appendChild(smoke);
+    setTimeout(()=>smoke.remove(),1500);
+  });
+
+  celebrate();
+  setTimeout(()=>show("giftScreen"),2000);
+}
+
+// Gift opening
+let giftOpened=false;
+function openGift(){
+  if(giftOpened)return;
+  giftOpened=true;
+  document.getElementById("gift").classList.add("open");
+  document.getElementById("giftHint").textContent=
+    "A little love is coming your way... 💗";
+  celebrate();
+  setTimeout(()=>show("letterScreen"),1300);
+}
+
+// Floating hearts
+function celebrate(){
+  const items=["💗","💕","✨","🌸","💖","🎉","♡"];
+  for(let i=0;i<18;i++){
+    const h=document.createElement("span");
+    h.className="heart";
+    h.textContent=items[Math.floor(Math.random()*items.length)];
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=(15+Math.random()*20)+"px";
+    h.style.animationDuration=(3+Math.random()*3)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6500);
+  }
+}
+
+// Replay everything
+function restart(){
+  candlesBlown=false;
+  giftOpened=false;
+
+  document.getElementById("cake").classList.remove("candles-out");
+  document.getElementById("gift").classList.remove("open");
+  document.getElementById("wishText").textContent=
+    "Your wish is waiting in the stars 🌟";
+  document.getElementById("blowBtn").textContent=
+    "Blow Out Candles 🕯️";
+  document.getElementById("giftHint").textContent=
+    "Tap the gift box to open it!";
+
+  show("welcome");
+}
+</script>
+</body>
+</html>
