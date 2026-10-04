@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Khushboo 💗</title>
 
 <style>
@@ -10,7 +10,7 @@
 body{
   min-height:100vh;color:white;font-family:Georgia,serif;
   background:radial-gradient(ellipse at top,#674078,#271d49 55%,#100e27);
-  overflow-x:hidden;
+  overflow-x:hidden
 }
 #sky{position:fixed;inset:0;pointer-events:none;overflow:hidden}
 .star{position:absolute;color:#fff0cb;animation:twinkle 2s infinite alternate}
@@ -19,16 +19,17 @@ body{
 header{
   position:relative;z-index:20;padding:17px;
   display:flex;justify-content:space-between;align-items:center;
-  background:#ffffff0b;border-bottom:1px solid #ffffff20;font-size:14px;
+  gap:10px;background:#ffffff0b;border-bottom:1px solid #ffffff20;
+  font-size:14px
 }
 header button{
   color:white;background:#ffffff12;border:1px solid #ffffff50;
-  border-radius:25px;padding:9px 12px;cursor:pointer;
+  border-radius:25px;padding:10px 13px;cursor:pointer
 }
 .screen{
   display:none;min-height:88vh;padding:35px 16px;
   align-items:center;justify-content:center;text-align:center;
-  position:relative;z-index:1;
+  position:relative;z-index:1
 }
 .screen.active{display:flex;animation:appear .7s ease}
 @keyframes appear{
@@ -43,7 +44,7 @@ p{font-size:14px;line-height:1.9;color:#e8dcf6}
   padding:14px 23px;border:0;border-radius:30px;margin:7px;
   background:linear-gradient(135deg,#ffc0dc,#f577af);
   color:#51233f;font-weight:bold;font-size:14px;cursor:pointer;
-  box-shadow:0 8px 24px #ff8fbc33;transition:.25s;
+  box-shadow:0 8px 24px #ff8fbc33;transition:.25s
 }
 .btn:hover{transform:translateY(-3px) scale(1.03)}
 .btn.alt{background:#ffffff12;color:white;border:1px solid #ffffff45;box-shadow:none}
@@ -53,17 +54,17 @@ p{font-size:14px;line-height:1.9;color:#e8dcf6}
 
 .cake-scene{
   height:280px;display:flex;align-items:center;justify-content:center;
-  position:relative;perspective:800px;margin:8px 0;
+  position:relative;perspective:800px;margin:8px 0
 }
 .cake{position:relative;width:230px;height:180px;animation:bob 3s infinite ease-in-out}
 @keyframes bob{50%{transform:translateY(-9px) rotateX(-3deg)}}
 .plate{
   position:absolute;bottom:0;width:230px;height:20px;
   background:linear-gradient(#fff1fa,#cbb4df);border-radius:50%;
-  box-shadow:0 14px 22px #0005;
+  box-shadow:0 14px 22px #0005
 }
 .layer{position:absolute;border-radius:10px 10px 15px 15px}
-.bottom{bottom:13px;left:20px;width:190px;height:67px;background:linear-gradient(90deg,#e75c98,#ffbad5 48%,#d74786);box-shadow:inset -10px 0 #8c285044}
+.bottom{bottom:13px;left:20px;width:190px;height:67px;background:linear-gradient(90deg,#e75c98,#ffbad5 48%,#d74786)}
 .middle{bottom:70px;left:32px;width:166px;height:48px;background:linear-gradient(90deg,#c58ae5,#f2c8ff,#bb80dc)}
 .top{bottom:113px;left:45px;width:140px;height:38px;background:linear-gradient(90deg,#f68bb8,#ffe3ee,#f68bb8);border-radius:50% 50% 12px 12px}
 .icing{position:absolute;top:0;left:0;width:100%;height:14px;background:#fff1f7;border-radius:50%}
@@ -118,26 +119,23 @@ footer{position:relative;z-index:1;text-align:center;padding:20px;color:#bcaad8;
 
 <header>
   <span>♡ For Khushboo</span>
-  <button id="musicBtn" onclick="toggleMusic()">♫ Play Music</button>
+  <button id="musicBtn" type="button">♫ Play Music</button>
 </header>
 
-<!-- BACKGROUND MUSIC: bg.mp3 -->
-<audio id="backgroundMusic" autoplay loop preload="auto">
-  <source src="bg.mp3" type="audio/mpeg">
+<audio id="backgroundMusic" loop preload="auto">
+  <source src="./bg.mp3" type="audio/mpeg">
 </audio>
 
-<!-- WELCOME -->
 <section class="screen active" id="welcome">
   <div class="content">
     <div class="tag">✧ A LITTLE MAGIC ✧</div>
     <h1>Happy Birthday,<br>Khushboo! 💗</h1>
     <p>To my sweetest sister 🌷<br>A little surprise made with all my love,<br>just for you.</p>
     <div class="big-emoji" style="font-size:95px;animation:bob 2s infinite">🎁</div>
-    <button class="btn" onclick="show('birthday')">Start Your Surprise ✨</button>
+    <button class="btn" onclick="startSurpriseAndPlayMusic()">Start Your Surprise ✨</button>
   </div>
 </section>
 
-<!-- BIRTHDAY CAKE -->
 <section class="screen" id="birthday">
   <div class="content">
     <div class="tag">✧ MAKE A WISH ✧</div>
@@ -160,7 +158,6 @@ footer{position:relative;z-index:1;text-align:center;padding:20px;color:#bcaad8;
   </div>
 </section>
 
-<!-- GIFT -->
 <section class="screen" id="giftScreen">
   <div class="content">
     <div class="tag">✧ YOUR LITTLE PRESENT ✧</div>
@@ -177,7 +174,6 @@ footer{position:relative;z-index:1;text-align:center;padding:20px;color:#bcaad8;
   </div>
 </section>
 
-<!-- LETTER -->
 <section class="screen" id="letterScreen">
   <div class="content">
     <div class="tag">✧ TO MY FOREVER SISTER ✧</div>
@@ -204,7 +200,6 @@ my forever family, and my favourite blessing.</p>
   </div>
 </section>
 
-<!-- FINAL WISH -->
 <section class="screen" id="finalScreen">
   <div class="content">
     <div class="tag">✧ A WISH FOR YOU ✧</div>
@@ -212,308 +207,3 @@ my forever family, and my favourite blessing.</p>
       <div class="big-emoji">🎂💗🎁</div>
       <h2>Make This Year Yours!</h2>
       <p>May this new chapter bring you beautiful beginnings,
-happy surprises, peaceful nights and unforgettable memories.
-
-May every little wish find its way to you.
-
-And whenever life feels difficult,
-remember that brighter days can come.</p>
-      <p class="love">Happy Birthday, Khushboo! ♡</p>
-    </div>
-    <br>
-    <button class="btn" onclick="startRiddles()">Unlock Your Surprise 🔐</button>
-  </div>
-</section>
-
-<!-- 10 RIDDLES -->
-<section class="screen" id="riddleScreen">
-  <div class="content">
-    <div class="tag">✧ ONE LAST CHALLENGE ✧</div>
-    <h1>Unlock Your Surprise 🧩</h1>
-    <p>Answer all 10 riddles correctly to reveal your special birthday video! 💗</p>
-
-    <div class="riddle-box">
-      <p id="riddleProgress">RIDDLE 1 OF 10</p>
-      <h2 id="riddleQuestion"></h2>
-      <div id="riddleOptions"></div>
-      <p id="riddleFeedback" aria-live="polite"></p>
-      <button class="btn" id="nextRiddleBtn" style="display:none" onclick="nextRiddle()">Next Riddle →</button>
-
-      <div id="unlockMessage">
-        <div class="big-emoji">🎉💗🎁</div>
-        <h2>Yay! You Have Unlocked Your Surprise!</h2>
-        <p>All 10 answers are correct! Your special video is ready.</p>
-        <button class="btn" onclick="unlockVideo()">Watch Our Memories 🎬</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO: video.mp4 -->
-<section class="screen" id="videoScreen">
-  <div class="content">
-    <div class="tag">✧ OUR LITTLE WORLD ✧</div>
-    <h1>Our Memories,<br>Khushboo 💞</h1>
-    <p>Every little moment with you is a memory<br>I wish I could keep forever.</p>
-
-    <div class="memory-frame">
-      <video id="sisterVideo" controls playsinline preload="metadata">
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support video playback.
-      </video>
-    </div>
-
-    <p class="video-caption">Different moments, one forever bond. 👭</p>
-
-    <div class="letter" style="margin-top:22px">
-      <div class="big-emoji">💗</div>
-      <h2>My Forever Person</h2>
-      <p>Khushboo, thank you for being YOU.
-
-I hope we keep making memories,
-laughing over silly things,
-and standing beside each other
-through every chapter of life.</p>
-      <p class="love">No matter how old we get,
-you'll always be my little piece of home. ♡</p>
-    </div>
-    <br>
-    <button class="btn" onclick="restart()">Relive the Surprise ↻</button>
-  </div>
-</section>
-
-<footer>made with a little love, just for Khushboo ♡</footer>
-
-<script>
-// STARS
-const sky = document.getElementById("sky");
-
-for (let i = 0; i < 75; i++) {
-  const s = document.createElement("span");
-  s.className = "star";
-  s.textContent = Math.random() > .5 ? "✦" : "·";
-  s.style.left = Math.random() * 100 + "%";
-  s.style.top = Math.random() * 100 + "%";
-  s.style.fontSize = (8 + Math.random() * 12) + "px";
-  s.style.animationDelay = Math.random() * 3 + "s";
-  sky.appendChild(s);
-}
-
-// BACKGROUND MUSIC: bg.mp3
-const backgroundMusic = document.getElementById("backgroundMusic");
-const musicBtn = document.getElementById("musicBtn");
-
-window.addEventListener("load", () => {
-  backgroundMusic.play().then(() => {
-    musicBtn.textContent = "♫ Pause Music";
-  }).catch(() => {
-    musicBtn.textContent = "♫ Play Music";
-  });
-});
-
-function toggleMusic() {
-  if (backgroundMusic.paused) {
-    backgroundMusic.play().then(() => {
-      musicBtn.textContent = "♫ Pause Music";
-    }).catch(() => {
-      musicBtn.textContent = "♫ Tap to Play";
-    });
-  } else {
-    backgroundMusic.pause();
-    musicBtn.textContent = "♫ Play Music";
-  }
-}
-
-// SCREEN NAVIGATION
-let videoUnlocked = false;
-
-function show(id) {
-  if (id === "videoScreen" && !videoUnlocked) return;
-
-  const video = document.getElementById("sisterVideo");
-  if (id !== "videoScreen") video.pause();
-
-  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-  window.scrollTo({top: 0, behavior: "smooth"});
-  celebrate();
-}
-
-// CAKE
-let candlesBlown = false;
-
-function blowCandles() {
-  if (candlesBlown) return;
-  candlesBlown = true;
-
-  document.getElementById("cake").classList.add("candles-out");
-  document.getElementById("wishText").textContent =
-    "Your wish is on its way to the stars! ✨";
-  document.getElementById("blowBtn").textContent = "Wish Made! 💖";
-
-  document.querySelectorAll(".candle").forEach(c => {
-    const smoke = document.createElement("span");
-    smoke.className = "smoke";
-    smoke.textContent = "〰";
-    c.appendChild(smoke);
-    setTimeout(() => smoke.remove(), 1500);
-  });
-
-  celebrate();
-  setTimeout(() => show("giftScreen"), 2000);
-}
-
-// GIFT
-let giftOpened = false;
-
-function openGift() {
-  if (giftOpened) return;
-  giftOpened = true;
-
-  document.getElementById("gift").classList.add("open");
-  document.getElementById("giftHint").textContent =
-    "A little love is coming your way... 💗";
-
-  celebrate();
-  setTimeout(() => show("letterScreen"), 1300);
-}
-
-// FLOATING HEARTS
-function celebrate() {
-  const items = ["💗", "💕", "✨", "🌸", "💖", "🎉", "♡"];
-
-  for (let i = 0; i < 18; i++) {
-    const h = document.createElement("span");
-    h.className = "heart";
-    h.textContent = items[Math.floor(Math.random() * items.length)];
-    h.style.left = Math.random() * 100 + "vw";
-    h.style.fontSize = (15 + Math.random() * 20) + "px";
-    h.style.animationDuration = (3 + Math.random() * 3) + "s";
-    document.body.appendChild(h);
-    setTimeout(() => h.remove(), 6500);
-  }
-}
-
-// 10 RIDDLES
-const riddles = [
-  {q:"What has keys but cannot open locks?",o:["Piano","Door","Box","Bag"],a:0},
-  {q:"What gets wetter as it dries?",o:["Paper","Towel","Sand","Soap"],a:1},
-  {q:"What has hands but cannot clap?",o:["Doll","Clock","Tree","Book"],a:1},
-  {q:"What has many teeth but cannot bite?",o:["Lion","Comb","Shark","Dog"],a:1},
-  {q:"What goes up but never comes down?",o:["Balloon","Your age","Kite","Smoke"],a:1},
-  {q:"What has a neck but no head?",o:["Shirt","Bottle","Chair","Table"],a:1},
-  {q:"What has one eye but cannot see?",o:["Cat","Needle","Bird","Fish"],a:1},
-  {q:"What belongs to you but others use it more?",o:["Shoes","Your name","Bag","Phone"],a:1},
-  {q:"What can travel around the world while staying in one corner?",o:["Stamp","Cloud","Bird","Train"],a:0},
-  {q:"What has words but never speaks?",o:["Radio","Book","Baby","Phone"],a:1}
-];
-
-let currentRiddle = 0;
-let answered = false;
-
-function startRiddles() {
-  currentRiddle = 0;
-  answered = false;
-  videoUnlocked = false;
-
-  document.getElementById("riddleQuestion").style.display = "block";
-  document.getElementById("riddleOptions").style.display = "grid";
-  document.getElementById("unlockMessage").style.display = "none";
-  document.getElementById("nextRiddleBtn").style.display = "none";
-
-  show("riddleScreen");
-  renderRiddle();
-}
-
-function renderRiddle() {
-  answered = false;
-  const r = riddles[currentRiddle];
-
-  document.getElementById("riddleProgress").textContent =
-    `RIDDLE ${currentRiddle + 1} OF 10`;
-  document.getElementById("riddleQuestion").textContent = r.q;
-  document.getElementById("riddleFeedback").textContent = "";
-  document.getElementById("nextRiddleBtn").style.display = "none";
-
-  const box = document.getElementById("riddleOptions");
-  box.innerHTML = "";
-  box.style.display = "grid";
-
-  r.o.forEach((option, i) => {
-    const btn = document.createElement("button");
-    btn.className = "btn alt";
-    btn.textContent = option;
-
-    btn.onclick = () => {
-      if (answered) return;
-
-      if (i === r.a) {
-        answered = true;
-        document.getElementById("riddleFeedback").textContent =
-          "Correct answer! Well done! 💗";
-        document.getElementById("riddleFeedback").style.color = "#a8ffc8";
-
-        [...box.children].forEach(b => b.disabled = true);
-
-        document.getElementById("nextRiddleBtn").textContent =
-          currentRiddle === 9 ? "Reveal My Surprise 🎁" : "Next Riddle →";
-        document.getElementById("nextRiddleBtn").style.display = "inline-block";
-      } else {
-        document.getElementById("riddleFeedback").textContent =
-          "Not quite! Try another answer 💕";
-        document.getElementById("riddleFeedback").style.color = "#ffb6d9";
-      }
-    };
-
-    box.appendChild(btn);
-  });
-}
-
-function nextRiddle() {
-  if (!answered) return;
-
-  if (currentRiddle < 9) {
-    currentRiddle++;
-    renderRiddle();
-  } else {
-    document.getElementById("riddleQuestion").style.display = "none";
-    document.getElementById("riddleOptions").style.display = "none";
-    document.getElementById("riddleProgress").textContent =
-      "10 OF 10 COMPLETED! 💗";
-    document.getElementById("nextRiddleBtn").style.display = "none";
-    document.getElementById("unlockMessage").style.display = "block";
-  }
-}
-
-function unlockVideo() {
-  if (currentRiddle !== 9 || !answered) return;
-  videoUnlocked = true;
-  show("videoScreen");
-}
-
-// REPLAY
-function restart() {
-  candlesBlown = false;
-  giftOpened = false;
-  currentRiddle = 0;
-  answered = false;
-  videoUnlocked = false;
-
-  document.getElementById("cake").classList.remove("candles-out");
-  document.getElementById("gift").classList.remove("open");
-  document.getElementById("wishText").textContent =
-    "Your wish is waiting in the stars 🌟";
-  document.getElementById("blowBtn").textContent =
-    "Blow Out Candles 🕯️";
-  document.getElementById("giftHint").textContent =
-    "Tap the gift box to open it!";
-
-  const video = document.getElementById("sisterVideo");
-  video.pause();
-  video.currentTime = 0;
-
-  show("welcome");
-}
-</script>
-</body>
-      </html>
